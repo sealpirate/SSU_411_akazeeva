@@ -60,16 +60,21 @@ public class YearByFriday {
             String currentMonth;
             Friday friday = new Friday();
             String dayOfWeek;
+            int numberOfYears=0;
 
 
 
             for (int i = 1880; i < yearOfEnd; i++) {
                 calendar.set(i, Month, 13);
                 dayOfWeek = calendar.getDisplayName(calendar.DAY_OF_WEEK, calendar.SHORT, Locale.ENGLISH);
-                if (dayOfWeek.equals("Fri")) System.out.println(i);
+                if (dayOfWeek.equals("Fri")) {
+                    System.out.println(i);
+                    numberOfYears++;
+                }
 
 
             }
+            System.out.println("Количество лет: " + numberOfYears);
 
 
 
